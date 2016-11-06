@@ -1,0 +1,11 @@
+pre{
+    margin-bottom:0;
+}
+.pre{
+    border:1px solid #999;text-align:left;padding:5px;
+    font-family: Consolas,sans-serif;
+    font-style: italic;
+}
+small{
+    font-size:small;
+}
