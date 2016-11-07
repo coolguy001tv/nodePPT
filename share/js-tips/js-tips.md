@@ -11,7 +11,6 @@ date: 2016/11/06
 
 [note]
 * js tips(原生 js的相关，rn同学也可以收获一些玩意)
-* Emmet
 [/note]
 
 [slide data-transition="vertical3d"]
@@ -85,7 +84,10 @@ Final victor
 var items = ['one', 'two', 'three', 'four'];
 items.splice(items.length / 2, 0, 'hello');
 ```
-
+[note]
+`array.splice(start, deleteCount[, item1[, item2[, ...]]])` 
+与slice不同，他直接修改数组本身
+[/note]
 [slide]
 # Sorting String Array with accented characters
 ## ```arr.sort([compareFunction])```
@@ -121,8 +123,9 @@ referenceStr.localeCompare(compareString[, locales[, options]])
 ['中国','啊'].sort(function(a,b){return a.localeCompare(b)});//['啊','中国']
 ```
 [note]
-localeCompare() 方法返回一个数字来表明调用该函数的字符串（reference string）的排列顺序是否在某个给定的字符串的前面或者后面，或者是一样的（编码中的位置）。 
-当 referenceStr 在 compareStr 前面时返回负数 (简单理解就是大于) 
+locale 不是 local  
+localeCompare() 方法返回一个数字来表明调用该函数的字符串（reference string）的排列顺序是否在某个给定的字符串的前面或者后面，或者是一样的（编码中的位置）。  
+当 referenceStr 在 compareStr 前面时返回负数 (简单理解就是大于)  
 浏览器支持性： 根据MDN，所有浏览器都基础支持， locales and options 大部分不支持 
 [/note]
 
@@ -132,6 +135,10 @@ localeCompare() 方法返回一个数字来表明调用该函数的字符串（r
 {:&.fadeIn}
 ```javascript
 ['中国','啊','谈','覃','啥','提','批'].sort(Intl.Collator().compare)
+```
+
+```javascript
+["啊", "批", "啥", "谈", "覃", "提", "中国"]
 ```
 
 [note] 
@@ -149,8 +156,8 @@ Intl.Collator的支持性不如localeCompare（特别是移动端，几乎都不
 - Javascript sets unassigned variables with a default value of `undefined`
 - Javascript never sets a value to `null`. It is used by programmers to indicate that a `var` has no value.
 - `undefined` is not valid in JSON while `null` is
-- `undefined` typeof is `undefined`
 - Both are primitives
+- `undefined` typeof is `undefined`
 - `null` typeof is an `object`. 
 
 [note]
@@ -194,12 +201,12 @@ Function object (implements [[Call]] in ECMA-262 terms)	|"function"
 Any other object	|"object"
 
 [note]
-operand: 操作数 
-typeof Infinity ,NaN === 'number'
-typeof new Array,[] === 'object'
-typeof Object,Array === 'function' 
-object supplied by the host environment to complete the execution environment of ECMAScript. 
-NOTE Any object that is not native is a host object.
+operand: 操作数   
+typeof Infinity ,NaN === 'number'  
+typeof new Array,[] === 'object'  
+typeof Object,Array === 'function'   
+object supplied by the host environment to complete the execution environment of ECMAScript.   
+NOTE Any object that is not native is a host object.  
 [/note]
 
 [slide data-transitioin="move"]
@@ -269,13 +276,13 @@ This may seem like a very obvious bug, but don’t forget that there was very li
 [slide data-transitioin="move"]
 # Solutions
 ----
+* It was implemented in V8 but it turned out that it broke a lot of existing sites. *In the spirit of One JavaScript* this is not feasible.
 * Douglas Crockford: 
 ```javascript
 Object.isObject = function isObject(value) {
       return typeof value === 'object' && value !== null;
   }
 ```
-* It was implemented in V8 but it turned out that it broke a lot of existing sites. *In the spirit of One JavaScript* this is not feasible.
 http://wiki.ecmascript.org/doku.php?id=harmony%3atypeof_null
 
 [slide]
@@ -285,7 +292,10 @@ http://wiki.ecmascript.org/doku.php?id=harmony%3atypeof_null
 * a = 1
 * 1 == a 
 
-
+[note]
+C编程规范上移植过来  
+jslint  
+[/note]
 [slide]
 # Template Strings \` (ES6)
 ----
@@ -389,7 +399,7 @@ concat效率没有+高
 
 
 [slide]
-# Using JSON.Stringify
+# Using JSON.stringify
 ----
 ```javascript
 var obj = {
@@ -424,12 +434,13 @@ str = JSON.stringify(obj, selectedProperties, '\t\t');
         *  \[...set\]
         * Array.from(new Set(...))
 
+[note]
+通过Object加入的key的排序是不确定的，但是Map是按照key的加入顺序来的
+[/note]
 
 [slide data-transitioin="move"]
 # Website
 ---
 * https://github.com/loverajoel/jstips
 * https://github.com/explore
-[note]
-通过Object加入的key的排序是不确定的，但是Map是按照key的加入顺序来的
-[/note]
+
