@@ -8,6 +8,10 @@ date: 2016/12/22
 
 [slide data-transitioin="move"]
 # shop-management-eslint
+[note]
+ESLint is an open source project originally created by Nicholas C. Zakas in June 2013.  
+Its goal is to provide a pluggable linting utility for JavaScript. 
+[/note]
 
 [slide]
 # 检查范围
@@ -56,7 +60,8 @@ date: 2016/12/22
 ```
 
 [note]
-    编译失败，后文有跳过方法
+    编译失败，后文有跳过方法 
+    其他全局变量的问题，后面再讲
 [/note]
 
 [slide]
@@ -132,7 +137,7 @@ if(){};
 ```
 if(a=1){}
 ```
-* 不要使用!!(no-extra-boolean-cast)
+* 不要在if语句中使用!!(no-extra-boolean-cast)
 
 
 
@@ -258,8 +263,33 @@ totalPrice=Number(_this.getInputTotalValue())-Number(_this.state.favValue)+Numbe
 [note]
 UserName随意，能标识就可以，英文拼音均可 
 WS上新建时可以直接建立模板 
+关于模板的东西涵哥要讲 
 [/note]
 
+
+[slide]
+# EditorConfig
+
+[note]
+感谢 凡哥 小慧
+[/note]
+
+[slide]
+
+```
+root = true
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+max_line_length = 80
+insert_final_newline = true
+end_of_line = crlf
+```
+
+[note]
+   ws默认支持，其他IDE可能需要插件
+[/note]
 
 
 

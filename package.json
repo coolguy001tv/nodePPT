@@ -8,6 +8,9 @@
     "name": "Theo Wang",
     "email": "ksky521@gmail.com"
   },
+  "scripts": {
+    "run" : "nodeppt start -p 12345 -d share/shop-management-eslint"
+  },
   "bin": {
     "nodeppt": "bin/nodeppt"
   },
