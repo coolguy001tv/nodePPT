@@ -9,7 +9,8 @@
     "email": "ksky521@gmail.com"
   },
   "scripts": {
-    "run" : "nodeppt start -p 12345 -d share/shop-management-eslint"
+    "start" : "nodeppt start -p 12345 -d share/shop-management-eslint",
+    "generate" : "nodeppt generate share/shop-management-eslint/eslint.md -a"
   },
   "bin": {
     "nodeppt": "bin/nodeppt"
