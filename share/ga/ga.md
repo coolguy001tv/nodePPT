@@ -26,6 +26,11 @@ THE WEB'S SCAFFOLDING TOOL FOR MODERN WEBAPPS
 * npm
 
 [slide]
+# 实例
+-----
+参考[@berbon/generator-gen](http://10.2.50.216:88/package/@berbon/generator-gen)
+
+[slide]
 # GA
 ## Genetic Algorithm
 ---
