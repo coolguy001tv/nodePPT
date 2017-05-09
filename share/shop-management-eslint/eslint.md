@@ -72,6 +72,9 @@ Its goal is to provide a pluggable linting utility for JavaScript.
 * 去掉debugger
 * 缩进不对（tab请用4个空格代替）
 
+[note]
+以下内容整体上都是报error级别的错误（目前显示有点问题）
+[/note]
 
 [slide]
 * switch的格式 {:&.bounceIn}
@@ -91,6 +94,10 @@ case 0 : return "全部";break;
 case 1: {a=1;b=2;c=3;}break;
 ```
 
+[note]
+switch专题
+[/note]
+
 [slide]
 * if-else-var 的else分支不应该继续出现var {:&.bounceIn}
 ```
@@ -106,6 +113,11 @@ if(...){
 
 [slide]
 * 代码被多次复制 {:&.moveIn}
+* 单双引号问题
+```
+tip.addClass("success").html('<i class="ok"></i>')
+```
+* no-unused-vars
 * function的参数如果临时需要保留，请注释掉，否则会被报错(no-unused-vars)，比如
 ```
 function(i/*,reserve*/){}
@@ -116,7 +128,6 @@ map((v,i)=>{console.log(v)})
 ```
 
 [slide]
-* no-unused-vars {:&.bounceIn}
 * 不需要的else请不要保留(no-empty),如果因为某些原因需要保留，请写明注释，比如：
 ```
 if(...){
@@ -142,11 +153,6 @@ if(a=1){}
 
 
 [slide]
-* 单双引号问题 {:&.zoomIn}
-```
-tip.addClass("success").html('<i class="ok"></i>')
-```
-
 * no-dupe-keys
 ```
 let t = {berbonAcc:"",upperShopId:"",skuCode:"",productName:"",skuCode:""}
@@ -289,6 +295,7 @@ end_of_line = crlf
 
 [note]
    ws默认支持，其他IDE可能需要插件
+   //->https->http
 [/note]
 
 
